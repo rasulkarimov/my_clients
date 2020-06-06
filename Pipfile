@@ -1,0 +1,19 @@
+[[source]]
+verify_ssl = true
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[packages]
+django = "==2.0.6"
+django-rest-framework = "*"
+django-heroku = "*"
+gunicorn = "*"
+django-pandas = "*"
+pandas = "*"
+xlsxwriter = "*"
+numpy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.5"

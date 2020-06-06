@@ -1,0 +1,29 @@
+{% extends "admin/index.html" %}
+
+{% block breadcrumbs %}
+    <style>
+    #excel_block{
+        width: 900px;
+        padding: 20px 40px;
+    }
+    #excel_title{
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px;
+        background: #79aec8;
+        color: #fff;
+    }
+    .excel_el{
+        width: 890px;
+        margin-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px #eee solid;
+    }
+    </style>
+    <div id="excel_block">
+        <h1 id="excel_title">Выгрузка данных в Excel</h1>
+        <div class="excel_el"><a href="{% url 'my_clients_app:excel' %}">Вигрузить данные</a></div>
+    </div>
+{% endblock %}

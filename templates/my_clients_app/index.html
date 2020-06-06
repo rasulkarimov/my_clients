@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% verbatim %}
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>My Clients</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $http) {
+            $http.get("/")
+                .then(function (response) {
+                    $scope.myWelcome = response.data.response;
+                    $scope.list = response.data.list;
+                    console.log(response.data);
+                });
+        });
+    </script>
+
+</head>
+<body ng-controller="myCtrl">
+<p>Response: {{ myWelcome }}</p>
+<ul class="unstyled">
+    <li ng-repeat="item in list">
+        {{ item }}
+    </li>
+</ul>
+</body>
+</html>
+{% endverbatim %}
